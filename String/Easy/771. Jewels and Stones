@@ -24,14 +24,24 @@ All the characters of jewels are unique.
 ///        SOLUTION C++
 class Solution {
 public:
-    int numJewelsInStones(string jewels, string stones) {
-        int result = 0;
-        for(auto i:jewels)
-        {
-            for(auto j:stones)
-            if(i==j) 
-            result++;
-        }
-        return result;
+    int minPartitions(string n) {
+    int max=0;
+    for(auto i : n)
+    if(i>max)
+    max = i;   
+    return max-48;
+    }
+};
+
+//// second solution c++
+class Solution {
+public:
+    int minPartitions(string n) {
+     char * chars = n.data();
+    int max=0;
+    for(int i = 0; i< n.size(); i++)
+    if(chars[i]>max)
+    max = chars[i];   
+    return max-48;
     }
 };
